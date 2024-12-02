@@ -1,0 +1,35 @@
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } = require('discord.js');
+
+module.exports = {
+    .setName(`startorder`)
+    .setDescription("Things you can get!"),
+    async execute (interaction) {
+        const menu = new ActionRowBuilder()
+        .addComponents{
+            new SelectMenuBuilder()
+            .setCustomID('startorder')
+            .setMinValues(1)
+            .setPlaceholder('Choose an option')
+            .addOptions(
+                {
+                    label: "gfx",
+                    description: "Advanced pfp or thumbnail",
+                    value: "Item 1",
+                },
+                {
+                    label: "robux",
+                    description: "Get robux with alternate payments",
+                    value: "Item 2",
+                },
+                {
+                    label: "godlies",
+                    description: "Get godlies with alternate payments",
+                    value "Item 3",
+                },
+
+            ),
+        };
+
+        await interaction.reply({ content: "things you can order!", components [menu]})
+    }
+}
